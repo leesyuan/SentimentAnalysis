@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import numpy as np
 
 # Load model and tokenizer
-MODEL_NAME = "bert-base-uncased"
+MODEL_NAME = "chinese_english_xlm_r"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME, output_attentions=True)
 
