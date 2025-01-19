@@ -28,7 +28,7 @@ if st.button("Classify"):
         predicted_class = torch.argmax(logits, dim=-1)
 
         # Map to actual labels (if known)
-        class_labels = {0: "Negative", 1: "Positive"}  # Adjust based on your model
+        class_labels = {0: "Negative", 1: "Neutral"，2: "Positive"}  # Adjust based on your model
         predicted_label = class_labels[predicted_class.item()]
 
         # Display the result
