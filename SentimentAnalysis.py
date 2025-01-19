@@ -1,6 +1,7 @@
 import streamlit as st
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
+from textblob import TextBlob
 
 # Load pre-trained model and tokenizer
 MODEL_NAME = "Breakfast01/chinese-english-xlm-r"  # Replace with your model's name or your Hugging Face model
@@ -31,6 +32,10 @@ if st.button("Classify"):
         class_labels = {0: "Negative", 1: "Neutral", 2: "Positive"}  # Adjust based on your model
         predicted_label = class_labels[predicted_class.item()]
 
+        # Polarity and Subjectivity using TextBlob
+        blob = TextBlob(input_text)
+        polarity = blob.sentiment.polarity  # Range [-1, 1], -1 = negative, 1 = positive
+        subjectivity = blob.sentiment.subjectivity  # Range [0, 1], 0 = objective, 1 = subjective
         # Display the result
         st.write(f"Predicted Label: {predicted_label}")
     else:
