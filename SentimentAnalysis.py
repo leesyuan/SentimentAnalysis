@@ -38,5 +38,7 @@ if st.button("Classify"):
         subjectivity = blob.sentiment.subjectivity  # Range [0, 1], 0 = objective, 1 = subjective
         # Display the result
         st.write(f"Predicted Label: {predicted_label}")
+        st.write(f"Polarity: {polarity:.2f}")
+        st.write(f"Subjectivity: {subjectivity:.2f}")
     else:
         st.write("Please enter some text for classification.")
