@@ -3,7 +3,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
 # Load pre-trained model and tokenizer
-MODEL_NAME = "chinese_english_xlm_r"  # Replace with your model's name or your Hugging Face model
+MODEL_NAME = "Breakfast01/chinese-english-xlm-r"  # Replace with your model's name or your Hugging Face model
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
 
