@@ -8,7 +8,7 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
 
 # Streamlit interface
-st.title("Hugging Face Model with Streamlit")
+st.title("Sentiment Analysis with Streamlit")
 
 # Input text for classification
 input_text = st.text_area("Enter Text for Classification:")
